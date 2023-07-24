@@ -44,11 +44,20 @@
                                 <li class="nav-item">
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
                                 </li>
+                                <li class="nav-item">
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Company" asp-action="Index">Company</a>
+                                </li>
                                
                                 <li><hr class="dropdown-divider"></li>
                                 
                             </ul>
                         </li>}
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="Customer" asp-controller="Cart" asp-action="Index">
+                                <i class="bi bi-cart"></i> &nbsp; 
+                            </a>
+                        </li>
+
                         
                     </ul>
                     <partial name="_LoginPartial" />
@@ -64,7 +73,7 @@
     </div>
 
     <footer class="border-top footer bg-primary text-muted">
-        <div class="container">
+        <div class="container text">
             &copy; 2023 - DevWeb <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
