@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bulky.Models
 {
+
     public class Company
     {
         public int Id { get; set; }
@@ -19,4 +20,5 @@ namespace Bulky.Models
         public string? PhoneNumber { get; set; }
 
     }
+
 }
