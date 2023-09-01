@@ -119,7 +119,7 @@ namespace DevWeb.Areas.Admin.Controllers
 		public IActionResult Details_Pay_Now() {
 			OrderVM.OrderHeader= _unitOfWork.OrderHeader.Get(u=>u.Id==OrderVM.OrderHeader.Id, includeProperties:"ApplicationUser");
 			OrderVM.OrderDetail = _unitOfWork.OrderDetail.GetAll(u => u.OrderHeader.Id == OrderVM.OrderHeader.Id, includeProperties: "Product");
-            var domain = "https://localhost:7049/";
+            var domain = Request.Scheme+ "://"+ Request.Host.Value+"/";
             var options = new SessionCreateOptions
             {
                 LineItems = new List<SessionLineItemOptions>(),
