@@ -47,13 +47,16 @@ namespace DevWeb.Areas.Customer.Controllers
             {
                 cartFromDb.Count += shoppingCart.Count;
                 _unitOfWork.ShoppingCart.Update(cartFromDb);
+                _unitOfWork.Save(); 
             }
             else
             {
                 _unitOfWork.ShoppingCart.Add(shoppingCart);
+                _unitOfWork.Save();
+                HttpContext.Session.SetInt32(Bulky.Utility.SD.SessionCart, _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId).Count())  ;
             }
             TempData["success"] = "Cart Updated successfully";
-            _unitOfWork.Save();
+            
 
             return RedirectToAction("Index");
         }
